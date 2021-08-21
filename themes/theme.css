@@ -214,6 +214,30 @@ input, button, textareat {
     color: var(--white);
 }
 
+@media only screen and (max-width: 1200px) {
+    .title__text {
+        font-size: 4.6rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .title__text {
+        font-size: 4.2rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .title__text {
+        font-size: 3.8rem;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .title__text {
+        font-size: 3.4rem;
+    }
+}
+
 /* <><><> Tests Styles <><><> */
 .tests__inner {
     margin-bottom: 75px;
@@ -271,6 +295,27 @@ input, button, textareat {
     color: var(--white);
 }
 
+@media only screen and (max-width: 992px) {
+    .test__label {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .tests__title {
+        font-size: 2.6rem;
+    }
+    .test__label {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .test__label {
+        font-size: 1.3rem;
+    }
+}
+
 /* <><><> Question Styles <><><> */
 .question {
     display: flex;
@@ -296,12 +341,7 @@ input, button, textareat {
 
 .question__answer {
     display: none;
-    background-color: var(--main-color);
-}
-
-.question__answer::selection {
-    background-color: var(--dark-bg);
-    color: var(--white);
+    background-color: var(--light-bg);
 }
 
 .question__btn {
@@ -312,6 +352,18 @@ input, button, textareat {
 
 .question__btn:hover {
     background-color: var(--main-color);
+}
+
+@media only screen and (max-width: 992px) {
+    .question__label {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .question__label {
+        font-size: 1rem;
+    }
 }
 
 /* <><><> Hint Styles <><><> */
