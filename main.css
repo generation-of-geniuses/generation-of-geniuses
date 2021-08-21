@@ -1,0 +1,411 @@
+/* <><><> Global Styles <><><> */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    --white: #fff;
+    --dark-bg: #43658B;
+    --light-bg: #78C0E0;
+    --main-color: #FFA630;
+
+    font-size: 16px;
+}
+
+::selection {
+    background-color: #FFA630;
+}
+
+/* <><><> Container Styles <><><> */
+.container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        max-width: 992px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        max-width: 820px;
+    }
+}
+
+/* <><><> Header Styles <><><> */
+.header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 60px;
+    background-color: var(--dark-bg);
+    box-shadow: 0 1px 20px -10px black;
+}
+
+/* <><><> Nav Styles <><><> */
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-right: -1rem;
+}
+
+.logo__link {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logo__link::before {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: calc(50% - 10px);
+    display: none;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--main-color);
+}
+
+.logo__link::after {
+    content: "Перейти на главную страницу";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: max-content;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    background-color: var(--main-color);
+    font-size: 0.8rem;
+}
+
+.logo__link:hover::before, .logo__link:hover::after {
+    display: block;
+}
+
+.nav__list {
+    display: flex;
+    height: 100%;
+    list-style: none;
+}
+
+.nav__item {
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav__item:hover {
+    background-color: var(--light-bg);
+}
+
+.nav__menu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav__menu:hover {
+    background-color: var(--light-bg);
+}
+
+.nav__menu--line {
+    position: relative;
+    width: 2.4rem;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--white);
+}
+
+.nav__menu--line::before, .nav__menu--line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--white);
+}
+
+.nav__menu--line::before {
+    top: 0.7rem;
+}
+
+.nav__menu--line::after {
+    top: -0.7rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav__link {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .nav__list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        height: auto;
+        background-color: var(--dark-bg);
+    }
+    .nav__list--visible {
+        display: flex;
+    }
+    .nav__item {
+        padding: 0.5rem 1rem;
+    }
+    .nav__menu {
+        display: flex;
+    }
+}
+
+/* <><><> Intro Styles <><><> */
+.intro {
+    background-color: var(--light-bg);
+}
+
+.intro__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    color: var(--white);
+}
+
+.intro__title {
+    margin-top: 150px;
+    margin-bottom: 20px;
+    padding: 0 1rem;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 120%;
+}
+
+.intro__subtitle {
+    max-width: 1400px;
+    margin-bottom: 150px;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 140%;
+}
+
+.intro__personal {
+    display: flex;
+}
+
+.personal__person {
+    margin-bottom: 40px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.personal__person--status {
+    font-weight: 700;
+}
+
+.personal__person--link {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.personal__person--link:hover {
+    color: var(--dark-bg);
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+    .intro__title {
+        font-size: 3.6rem;
+    }
+    .intro__subtitle {
+        max-width: 992px;
+        font-size: 1.4rem;
+    }
+    .personal__person {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .intro__title {
+        margin-top: 125px;
+        font-size: 3rem;
+    }
+    .intro__subtitle {
+        max-width: 992px;
+        margin-bottom: 125px;
+        font-size: 1.2rem;
+    }
+    .personal__person {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .intro__title {
+        font-size: 2.6rem;
+    }
+    .intro__subtitle {
+        font-size: 1.1rem;
+    }
+    .personal__person {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .personal__person--status {
+        margin-bottom: 0.2rem;
+    }
+}
+
+/* <><><> Themes Styles <><><> */
+.themes__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 75px;
+}
+
+.themes__title {
+    margin-top: 50px;
+    font-size: 3rem;
+    color: var(--dark-bg);
+}
+
+.themes__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 1rem;
+}
+
+.theme__link {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: var(--dark-bg);
+    font-size: 1.8rem;
+    color: var(--white);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.theme__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 400ms ease-in;
+}
+
+.theme__link:last-child {
+    grid-column: 1 / 3;
+}
+
+.theme__link:hover::before {
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .themes__list {
+        grid-template-columns: 1fr;
+    }
+    .theme__link {
+        font-size: 1.7rem;
+    }
+    .theme__link:last-child {
+        grid-column: 1 / 2;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .themes__title {
+        font-size: 2.6rem;
+    }
+    .theme__link {
+        font-size: 1.6rem;
+    }
+}
+
+/* <><><> Hint Styles <><><> */
+.hint {
+    background-color: var(--light-bg);
+}
+
+.hint__text {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    color: var(--white);
+    text-align: center;
+    line-height: 140%;
+}
+
+/* <><><> Motivation Styles <><><> */
+.motivation {
+    background-color: var(--dark-bg);
+}
+
+.motivation__inner {
+    padding: 50px 0;
+}
+
+.motivation__text {
+    padding: 0 1rem;
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 120%;
+}
+
+@media only screen and (max-width: 820px) {
+    .motivation__text {
+        font-size: 2.6rem;
+    }
+}
