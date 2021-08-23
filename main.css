@@ -239,12 +239,6 @@ body {
 
 .personal__person--link {
     color: var(--white);
-    text-decoration: none;
-}
-
-.personal__person--link:hover {
-    color: var(--dark-bg);
-    text-decoration: underline;
 }
 
 @media only screen and (max-width: 1200px) {
